@@ -32,7 +32,7 @@
 
 
 .wave-divider {
-    margin-top: 12em;
+    margin-top: 31em;
     margin-bottom: -18em;
     width: 100%;
     aspect-ratio: 1600 / 120;
@@ -55,6 +55,13 @@
     stroke-linecap: round;
     stroke-linejoin: round;
     transition: stroke-dashoffset 1.6s ease-in-out;
+}
+
+.margTop{
+    margin-top: -8.3em;
+}
+.margTop2{
+    margin-top: 12.8em;
 }
 
 @media (prefers-reduced-motion: reduce) {

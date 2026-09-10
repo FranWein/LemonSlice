@@ -1,0 +1,44 @@
+---
+const { flip = false } = Astro.props;
+---
+
+<div class:list={["wave-divider", "margTop", { "wave-divider--flip": flip }]} aria-hidden="true">
+    <svg class="wave-divider__svg" viewBox="0 0 1400 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="wave-divider__path stroke-[#FFF9E9]" d="M0,90 C60,30 140,30 200,90 C260,150 340,150 400,90 C460,30 540,30 600,90 C660,150 740,150 800,90 C860,30 940,30 1000,90 C1060,150 1140,150 1200,90 C1260,30 1340,30 1400,90 C1460,150 1540,150 1600,90"></path>
+    </svg>
+</div>
+<div class:list={["wave-divider", "margTop2", { "wave-divider--flip": flip }]} aria-hidden="true">
+    <svg class="wave-divider__svg" viewBox="0 0 1400 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="wave-divider__path stroke-[#FFF9E9]" d="M0,90 C60,30 140,30 200,90 C260,150 340,150 400,90 C460,30 540,30 600,90 C660,150 740,150 800,90 C860,30 940,30 1000,90 C1060,150 1140,150 1200,90 C1260,30 1340,30 1400,90 C1460,150 1540,150 1600,90"></path>
+    </svg>
+</div>
+<script>
+    const dividers = document.querySelectorAll(".wave-divider");
+    dividers.forEach((wrapper) => {
+        const path = wrapper.querySelector(".wave-divider__path");
+        if (!path) return;
+        const length = path.getTotalLength(); 
+        path.style.strokeDasharray = String(length);
+        path.style.strokeDashoffset = String(length);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const path = entry.target.querySelector(
+                        ".wave-divider__path"
+                    );
+                    if (!path) return;
+                    path.style.strokeDashoffset = "0";
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.1,
+            rootMargin: "0px 0px -5% 0px"
+        }
+    );
+
+    dividers.forEach((el) => observer.observe(el));
+</script>
