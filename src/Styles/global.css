@@ -7,11 +7,15 @@
 
 .font{
     font-family: "Fascinate", system-ui;
-    font-size: 2.5em;
+    font-size: 3.3em;
 }
 .txt{
     font-family: "League Spartan", sans-serif;
     font-size: 1.2em;
+}
+.biggerFont{
+    font-family: "Fascinate", system-ui;
+    font-size: 3em;
 }
 
 .buy-button {
@@ -32,7 +36,7 @@
 
 
 .wave-divider {
-    margin-top: 31em;
+    margin-top: 35em;
     margin-bottom: -18em;
     width: 100%;
     aspect-ratio: 1600 / 120;
@@ -58,9 +62,10 @@
 }
 
 .margTop{
-    margin-top: -8.3em;
-}
-.margTop2{
+    margin-top: 12.9em;
+} .margTop2{
+    margin-top: 12.8em;
+} .margTop3{
     margin-top: 12.8em;
 }
 

@@ -5,10 +5,12 @@ import FirstBox from "../components/FirstBox.astro";
 import WaveDivider from "../components/WaveDivider.astro";
 import SecondPart from "../components/SecondPart.astro";
 import WhiteWave from "../components/WhiteWave.astro";
+import lemonImg from "../../public/img/lemon-img.png";
 ---
 
 <Layout>
     <NavBar />
+    <img src={lemonImg.src} alt="Lemon Image" class="absolute h-125 mt-10"/>
     <FirstBox />
     <WaveDivider />
     <SecondPart />
