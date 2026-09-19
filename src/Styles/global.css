@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body{
+    overflow-x: hidden;
+}
+
 .hovered:hover{
     color: #DEC241;
     font-weight: bold;
@@ -10,6 +14,10 @@
     font-size: 3.5em;
 }
 .txt{
+    font-family: "League Spartan", sans-serif;
+    font-size: 1.2em;
+}
+.bigTxt{
     font-family: "League Spartan", sans-serif;
     font-size: 1.6em;
 }
@@ -34,9 +42,22 @@
     position: absolute;
 }
 
+.lemon{
+    animation: lemon-spin 2s ease-out forwards;
+}
+
+@keyframes lemon-spin {
+    0% {
+        transform: rotate(1080deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 
 .wave-divider {
-    margin-top: 35em;
+    margin-top: 32em;
     margin-bottom: -18em;
     width: 100%;
     aspect-ratio: 1600 / 120;
@@ -66,6 +87,8 @@
 } .margTop2{
     margin-top: 12.8em;
 } .margTop3{
+    margin-top: 12.8em;
+} .margTop4{
     margin-top: 12.8em;
 }
 

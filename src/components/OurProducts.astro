@@ -1,2 +1,39 @@
-<img alt="Our Products" src="./img/ourProducts.png"/>
-<img alt="Pies" src="./img/PieImages.png"/>
+<img alt="Our Products" src="./img/ourProducts.png" class="absolute mt-196 z-4"/>
+<div class="absolute mt-235 z-4 w-390 flex justify-center items-center -ml-36 h-175 overflow-hidden bg-[#FFD000] cake-container active:cursor-grabbing">
+    <img alt="Pies" src="./img/PieImages.png" class="w-370 mb-175" draggable="false" id="cake"/>
+</div>
+<script>
+    const cake = document.querySelector("#cake");
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let rotation = 0;
+
+    cake.addEventListener("pointerdown", (event) => {
+        isDragging = true;
+        startX = event.clientX;
+        startY = event.clientY;
+        cake.setPointerCapture(event.pointerId);
+    });
+
+    cake.addEventListener("pointermove", (event) => {
+        if (!isDragging) return;
+        const currentX = event.clientX;
+        const currentY = event.clientY;
+        const deltaX = currentX - startX;
+        const deltaY = currentY - startY;
+        const movement = deltaX + deltaY;
+        rotation -= movement * 0.5;
+        cake.style.transform = `rotate(${rotation}deg)`;
+        startX = currentX;
+        startY = currentY;
+    });
+
+    cake.addEventListener("pointerup", () => {
+        isDragging = false;
+    });
+
+    cake.addEventListener("pointercancel", () => {
+        isDragging = false;
+    });
+</script>
