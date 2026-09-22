@@ -7,14 +7,16 @@ import SecondPart from "../components/SecondPart.astro";
 import OurProducts from "../components/OurProducts.astro";
 import WhiteWave from "../components/WhiteWave.astro";
 import lemonImg from "../../public/img/lemon-img.png";
+import FinalSec from "../components/FinalSec.astro";
 ---
 
 <Layout>
     <NavBar />
-    <img src={lemonImg.src} alt="Lemon Image" class="absolute h-110 mt-10"/>
+    <img src={lemonImg.src} alt="Lemon" class="absolute h-110 mt-10 animate -ml-68"/>
     <FirstBox />
     <WaveDivider />
     <SecondPart />
     <WhiteWave />
     <OurProducts />
+    <FinalSec />
 </Layout>

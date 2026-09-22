@@ -1,9 +1,21 @@
-<div class="bg-[#FFF9E9] w-full h-50 mt-67 absolute flex justify-center h-150 z-2">
+<div class="bg-[#FFF9E9] w-full h-50 mt-67 absolute flex justify-center h-150 z-2" id="business">
     <h1 class="biggerFont absolute text-[#AC6B38]">TRENDING</h1>
     <img src="./img/limones.png" alt="Limones" class="w-full h-150 absolute">
     <div class="absolute bg-[#FFD000] w-272 h-272 rounded-full mt-20 flex justify-center items-center">
         <div class="absolute bg-[#FFF9E9] w-242 h-242 rounded-full flex justify-center items-center">
-            <img src="./img/LimonTrending.png" alt="Limon Trending" class="lemon"/>
+            <img src="./img/LimonTrending.png" alt="Limon Trending" id="lemon" draggable="false"/>
         </div>
     </div>
 </div>
+<script>
+    const lemon = document.querySelector('#lemon');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting){
+                lemon?.classList.add('lemon');
+                observer.unobserve(lemon);
+            }
+        });
+    });
+    observer.observe(lemon);
+</script>
